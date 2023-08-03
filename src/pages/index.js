@@ -9,23 +9,18 @@ import { CreateUsecase } from "./CreateUsecase";
 import { ProcurementDetail } from "./Procurement";
 
 export const Pages = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        {<Route path="/projectoverview" element={<ProjectOverView />} />}
-        {<Route path="/projectwise" element={<ProjectWise />} />}
-        {<Route path="/matrixview" element={<MatrixView />} />}
-        {
-          <Route
-            path="/resourcewiseviewalltasks"
-            element={<ResourceWiseViewAllTasks />}
-          />
-        }
-        {<Route path="/dashboard" element={<Dashboard />} />}
-        {<Route path="/createusecase" element={<CreateUsecase />} />}
-        {<Route path="/procurement" element={<ProcurementDetail />} />}
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				{<Route path="/projectoverview" element={<ProjectOverView />} />}
+				{<Route path="/projectwise" element={<ProjectWise />} />}
+				{<Route path="/matrixview" element={<MatrixView />} />}
+				{<Route path="/resourcewiseviewalltasks" element={<ResourceWiseViewAllTasks />} />}
+				{<Route path="/dashboard" element={<Dashboard />} />}
+				{<Route path="/createusecase" element={<CreateUsecase />} />}
+				{<Route path="/procurement-detail/:id" element={<ProcurementDetail />} />}
+			</Routes>
+		</BrowserRouter>
+	);
 };
 export default React.memo(Pages);

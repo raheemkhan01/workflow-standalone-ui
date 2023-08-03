@@ -56,13 +56,13 @@ export class ProjectWise extends React.Component {
 		this.awsHelper.getUsecaseList((useCaseList) => {
 			useCaseList.forEach((useCase) => {
 				this.awsHelper.getExecutionHistory(
-					"arn:aws:states:us-east-1:657907747545:execution:send-to-pre-state:9bc49c92-4016-47a5-8a22-88d353e912ab",
+					"arn:aws:states:us-east-1:657907747545:execution:send-to-pre-state:47309418-f8aa-4741-820a-7a1cd80397af",
 					(items) => {
 						const useCases = this.state.useCaseList;
 						useCases.push({
 							...useCase,
 							steps: items,
-							executionArn: { S: "arn:aws:states:us-east-1:657907747545:execution:send-to-pre-state:9bc49c92-4016-47a5-8a22-88d353e912ab" }
+							executionArn: { S: "arn:aws:states:us-east-1:657907747545:execution:send-to-pre-state:47309418-f8aa-4741-820a-7a1cd80397af" }
 						});
 						this.setState({
 							useCaseList: useCases
@@ -224,7 +224,7 @@ export class ProjectWise extends React.Component {
 													<div className="tr" key={`usecase-${index}`}>
 														<div className="td">
 															<Link
-																to={`/a/xformation-workflow-engine/procurement-detail/${useCase.usecasename}`}
+																to={`/procurement-detail/${useCase.usecasename}`}
 															>
 																{useCase.usecasename}
 															</Link>
