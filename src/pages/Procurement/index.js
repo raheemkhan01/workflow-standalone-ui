@@ -10,8 +10,9 @@ import { Link } from 'react-router-dom';
 import { AwsHelper } from '../AwsHelpers';
 import AlertMessage from '../../components/AlertMessage';
 import { meta } from "../../commonDS";
+import withRouter from '../../components/withRoute';
 
-export class ProcurementDetail extends React.Component {
+class ProcurementDetail extends React.Component {
   breadCrumbs;
   stepper;
   awsHelper;
@@ -22,7 +23,7 @@ export class ProcurementDetail extends React.Component {
     super(props);
     this.state = {
       activeTab: 0,
-      // useCaseName: this.props.match.params.id,
+      useCaseName: this.props.params.id,
       useCase: {},
       isAlertOpen: false,
       message: '',
@@ -50,8 +51,7 @@ export class ProcurementDetail extends React.Component {
   }
 
   async componentDidMount() {
-    const { useCaseName } = this.state;
-    this.awsHelper.getUsecaseInputData(useCaseName, (getUseCase) => {
+    this.awsHelper.getUsecaseInputData(this.props.params.id, (getUseCase) => {
       if (getUseCase) {
         this.setState({ useCase: getUseCase })
       }
@@ -65,7 +65,7 @@ export class ProcurementDetail extends React.Component {
         this.passValuesToChildWithRef(useCase)
       }
       else {
-        this.props.history.push('/a/xformation-workflow-engine/dashboard')
+        this.props.history.push('/dashboard')
       }
     }
 
@@ -178,3 +178,4 @@ export class ProcurementDetail extends React.Component {
     );
   }
 }
+export default withRouter(ProcurementDetail)

@@ -29,8 +29,8 @@ export const ActorList = [
 
 export const meta = {
   jsonData: {
-    accessKey: "",
-    secretKey: "",
-    region: ""
+    accessKey: "AKIAZSLS3RLM6MNDE5RU",
+    secretKey: "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",
+    region: "us-east-1"
   }
 };
