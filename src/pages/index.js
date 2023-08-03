@@ -6,7 +6,7 @@ import { MatrixView } from "./MatrixView";
 import { ResourceWiseViewAllTasks } from "./ResourceWiseViewAllTasks";
 import { Dashboard } from "./Dashboard";
 import { CreateUsecase } from "./CreateUsecase";
-import { ProcurementDetail } from "./Procurement";
+import  ProcurementDetail from "./Procurement";
 
 export const Pages = () => {
 	return (
