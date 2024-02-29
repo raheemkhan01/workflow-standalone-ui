@@ -92,7 +92,6 @@ const newform = () => {
       .request(config)
       .then((response) => {
         console.log(JSON.stringify(response.data));
-
         router.push("/main/projects/developmentUsecases");
       })
       .catch((error) => {

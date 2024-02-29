@@ -3,7 +3,8 @@ import React from 'react';
 
 const UserListPage = () => {
     // Retrieve user data from local storage
-    const userData = JSON.parse(localStorage.getItem('userData')) || [];
+    const isBrowser = typeof window !== 'undefined';
+    const userData = isBrowser?JSON.parse(localStorage.getItem('userData')) || []: [];
 
     return (
         <div>
