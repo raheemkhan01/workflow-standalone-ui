@@ -5,9 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import reset from "../password/reset/page";
 import mainLogo from "../../../../public/assets/SYNECTIKS-logo.svg";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -16,8 +18,9 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState("");
 
   const onSubmit = (data) => {
-    if (data.username === "admin" && data.password === "Synectiks design") {
-      alert("Logged in successfully!");
+    if (data.username === "admin@gmail.com" && data.password === "password") {
+      // alert("Logged in successfully!");
+      router.push("/main")
     } else {
       setErrorMsg("Invalid username or password.");
     }
