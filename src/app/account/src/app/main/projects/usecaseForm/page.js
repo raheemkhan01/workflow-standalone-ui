@@ -3,7 +3,8 @@ import { Form, Input, Upload, Button, message, DatePicker } from "antd";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import moment from "moment";
 
 const layout = {
